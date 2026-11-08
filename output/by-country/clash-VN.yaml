@@ -4,31 +4,25 @@ allow-lan: true
 mode: rule
 log-level: info
 proxies:
-- name: 🇮🇱 IL 01 - xiaohe
+- name: 🇻🇳 VN 01 - xiaohe
   type: vless
-  server: 64.177.66.9
-  port: 8443
-  uuid: 5d7b401c-78fa-4254-872e-6d42bf7e75ec
+  server: 150.95.109.109
+  port: 2086
+  uuid: b83faafc-cbb7-4655-99d4-2c4c39a49d1b
   udp: true
-  tls: true
+  tls: false
   skip-cert-verify: true
-  servername: vp7.1145678.xyz
-  network: ws
-  ws-opts:
-    path: /events/classfp
-    headers:
-      Host: vp7.1145678.xyz
 proxy-groups:
 - name: PROXIES
   type: select
   proxies:
   - AUTO
-  - 🇮🇱 IL 01 - xiaohe
+  - 🇻🇳 VN 01 - xiaohe
 - name: AUTO
   type: url-test
   url: https://www.google.com/generate_204
   interval: 300
   proxies:
-  - 🇮🇱 IL 01 - xiaohe
+  - 🇻🇳 VN 01 - xiaohe
 rules:
 - MATCH,PROXIES
